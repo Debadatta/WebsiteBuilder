@@ -1,0 +1,24 @@
+{
+    "homePage":
+    {
+      "homePageHeaderText": ["xpath", "//h1[contains(text(),'Create a Website You’re Proud Of')]"],
+      "homePageLogoLink": ["xpath", "//a[@href='https://www.wix.com'"],
+      "signInLink": ["xpath", "//a[contains(text(), 'Sign In')]"],
+      "signUpLink": ["css", "[ng-click='$ctrl.onClickSignup()']"],
+      "heading": ["xpath","//h1[@class='ng-binding']"],
+      "toDoTextBox": ["model","todoList.todoText"],
+      "addButton": ["xpath","//input[@value='add']"],
+      "learnLink": ["xpath", "//a[contains(text(),'Learn')]"],
+      "checkBoxLabel": ["xpath","//form[@ng-submit='todoList.addTodo()']/parent::div/child::ul/li[last()]/label/span"]
+      
+    },
+
+    "signUpPage": {
+      "header": ["xpath", "//h1[contains(text(), 'Sign Up')]"],
+      "email": ["model", "$ctrl.email"],
+      "emailConfirm": ["model", "$ctrl.emailConfirm"],
+      "password": ["model", "$ctrl.password"],
+      "confirmPassword": ["model","$ctrl.passwordConfirm"],
+      "submitButton":["css", "input[type='submit']"]
+    }
+  }

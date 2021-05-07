@@ -1,0 +1,10 @@
+{
+    "application": {
+      "baseUrl": "https://www.wix.com/",
+      "title": "Free Website Builder | Create a Free Website | Wix.com"
+    },
+    "signUpPage": {
+      "title": "Log In | Wix"
+      
+    }
+}

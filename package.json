@@ -1,0 +1,23 @@
+{
+  "name": "protractorframework",
+  "version": "1.0.0",
+  "description": "This is a test Protractor frmework",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run conf.js"
+  },
+  "author": "Debadatt",
+  "license": "ISC",
+  "dependencies": {
+    "file-system": "^2.2.2",
+    "frisby": "^2.1.3",
+    "fs-extra": "^10.0.0",
+    "jasmine": "^3.7.0",
+    "jasmine-data-provider": "^2.2.0",
+    "jasmine-spec-reporter": "^7.0.0",
+    "log4js-protractor-appender": "^1.1.2",
+    "protractor": "^7.0.0",
+    "protractor-html-reporter-2": "^1.0.4",
+    "protractor-jasmine2-html-reporter": "0.0.7"
+  }
+}

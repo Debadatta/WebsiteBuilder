@@ -16,7 +16,7 @@ describe('Create Website Application', function() {
     browser.logger.info("Browser opened..");
   });
 
-  it('should open the home page successfully', function() {
+  xit('should open the home page successfully', function() {
     expect(browser.getTitle()).toEqual(testData.application.title);
     expect(homePage.getLogoExist).toBeTruthy();
     expect(homePage.checkSignInButtonDisplayed).toBeTruthy();

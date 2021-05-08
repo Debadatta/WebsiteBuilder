@@ -22,4 +22,11 @@ module.exports = function () {
             }, waitTimeout | 60000);
         }
     };
+
+    //wait for element is displayed
+    this.checkElementIsDisplayed = function (element) {
+        if (typeof element !== 'undefined') {            
+            return element.isDisplayed();
+        }
+    };
 };

@@ -26,6 +26,7 @@
     global.pages = {};
     global.pages.homePage = require('./pages/homePage.js');
     global.pages.signUpPage = require('./pages/signUpPage.js');
+    global.pages.loginPage = require('./pages/loginPage.js');
 
     global.wait = {
         until: {

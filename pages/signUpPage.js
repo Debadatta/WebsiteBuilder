@@ -14,14 +14,8 @@ module.exports = function () {
     var homePageHeader = objLocator.findLocator(objRepo.homePage.homePageHeaderText);
     var homePageLogoLink = objLocator.findLocator(objRepo.homePage.homePageLogoLink);
     var signInLink = objLocator.findLocator(objRepo.homePage.signInLink);
-    // var signUpPageHeader = objLocator.asyncFindLocator(objRepo.signUpPage.header);
-    // var emailTextBox = objLocator.asyncFindLocator(objRepo.signUpPage.email);
-    // var confEmailTextBox = objLocator.asyncFindLocator(objRepo.signUpPage.emailConfirm);
-    // var passwordTextBox = objLocator.asyncFindLocator(objRepo.signUpPage.password);
-    // var confPasswordTextBox = objLocator.asyncFindLocator(objRepo.signUpPage.confirmPassword);
-    // var submitButton = objLocator.asyncFindLocator(objRepo.signUpPage.submitButton);
     
-
+   
     this.openUrl = function (path) {
         if (typeof path === 'undefined') {
             path = '';
@@ -36,35 +30,143 @@ module.exports = function () {
     };
 
     this.checkSignUpPageHeaderDisplayed = function () {
-        return browser.driver.findElement(by.xpath("//h1[contains(text(), 'Sign Up')]")).isDisplayed();
-       //return waitActions.waitForElementIsDisplayed(signUpPageHeader);
-        //return waitActions.waitForElementIsDisplayed(signUpPageHeader);
+        try {
+            var signUpPageHeader = objLocator.asyncFindLocator(objRepo.signUpPage.header);
+            return waitActions.checkElementIsDisplayed( signUpPageHeader );
+        } catch(e) {
+            browser.logger.error(e);
+        }
     };
 
     this.checkEmailTextBoxDisplayed = function() {
-        return browser.driver.findElement(by.id("input_2")).isDisplayed();
-        //return waitActions.waitForElementIsDisplayed(emailTextBox);
+        try { 
+            var emailTextBox = objLocator.asyncFindLocator(objRepo.signUpPage.email);
+            return waitActions.checkElementIsDisplayed( emailTextBox );
+        } catch (e) {
+            browser.logger.error(e);
+        }
     }
 
     this.checkConfEmailTextBoxDisplayed = function() {
-        return browser.driver.findElement(by.name("emailConfirm")).isDisplayed();
-        //return waitActions.waitForElementIsDisplayed(confEmailTextBox);
+        try {
+            var confEmailTextBox = objLocator.asyncFindLocator(objRepo.signUpPage.emailConfirm);
+            return waitActions.checkElementIsDisplayed( confEmailTextBox);
+        } catch (e) {
+            browser.logger.error(e);
+        }
     }
 
     this.checkPasswordTextBoxDisplayed = function() {
-        //return waitActions.waitForElementIsDisplayed(passwordTextBox);
-        return browser.driver.findElement(by.name("password")).isDisplayed();
+        try {
+            var passwordTextBox = objLocator.asyncFindLocator(objRepo.signUpPage.password);
+            return waitActions.checkElementIsDisplayed( passwordTextBox);
+        } catch (e) {
+            browser.logger.error(e);
+        }
     }
 
     this.checkConfPwdTextBoxDisplayed = function() {
-        return browser.driver.findElement(by.name("passwordConfirm")).isDisplayed();
-        //return waitActions.waitForElementIsDisplayed(confPasswordTextBox);
+        try {
+            var confPasswordTextBox = objLocator.asyncFindLocator(objRepo.signUpPage.confirmPassword);
+            return waitActions.checkElementIsDisplayed( confPasswordTextBox);
+        } catch (e) {
+            browser.logger.error(e);
+        }
     }
 
     this.checkSignUpButtonDisplayed = function() {
-        //return waitActions.waitForElementIsDisplayed(submitButton);
-        return browser.driver.findElement(by.name("submit")).isDisplayed();
+        try {
+            var submitButton = objLocator.asyncFindLocator(objRepo.signUpPage.submitButton);
+            return waitActions.checkElementIsDisplayed( submitButton);
+        } catch (e) {
+            browser.logger.error(e);
+        }
     }
 
-    
+    this.checkFacebookSignUpButtonDisplayed = function() {
+        try {
+        var facebookSignUpButton = objLocator.asyncFindLocator(objRepo.signUpPage.facebookSignUp);
+        return waitActions.checkElementIsDisplayed( facebookSignUpButton );
+        } catch (e) {
+            browser.logger.error(e);
+        }
+    }
+
+    this.checkGoogleSignUpButtonDisplayed = function() {
+        try {
+        var googleSignUpButton = objLocator.asyncFindLocator(objRepo.signUpPage.googleSignUp);
+        return waitActions.checkElementIsDisplayed( googleSignUpButton );
+        } catch (e) {
+            browser.logger.error(e);
+        }
+    }
+
+    this.enterEmail = function(email) {        
+        try {
+            var emailTextBox = objLocator.asyncFindLocator(objRepo.signUpPage.email);
+            inputBoxActions.type( emailTextBox, email );
+        } catch (e) {
+            browser.logger.error(e);
+        }
+    }
+    this.enterConfirmEmail = function(cnfEmail) {        
+        try {
+            var confEmailTextBox = objLocator.asyncFindLocator(objRepo.signUpPage.emailConfirm);
+            inputBoxActions.type( confEmailTextBox, cnfEmail );
+        } catch (e) {
+            browser.logger.error(e);
+        }
+    }
+    this.enterPassword = function(password) {
+        try {
+            var passwordTextBox = objLocator.asyncFindLocator(objRepo.signUpPage.password);
+            inputBoxActions.type( passwordTextBox, password );
+        } catch (e) {
+            browser.logger.error(e);
+        }
+    }
+    this.enterConfirmPassword = function(cnfPassword) {
+        try {
+            var confPasswordTextBox = objLocator.asyncFindLocator(objRepo.signUpPage.confirmPassword);
+            inputBoxActions.type( confPasswordTextBox, cnfPassword);
+        } catch (e) {
+            browser.logger.error(e);
+        }
+    }
+    this.clickSignUpButton = function() {
+        try {
+            var submitButton = objLocator.asyncFindLocator(objRepo.signUpPage.submitButton);
+            buttonActions.click(submitButton);
+        } catch (e) {
+            browser.logger.error(e);
+        }
+    }
+
+    this.getStartedMessageDisplayed =  function() {
+        try {
+            var getStartedMsg = objLocator.asyncFindLocator(objRepo.introPage.getStartedMsg);
+            return waitActions.waitForElementIsDisplayed(getStartedMsg);
+        } catch (e) {
+            browser.logger.error(e);
+        }
+    }
+
+    this.clickCaptcha = function() {
+        try {
+            var captchaImage = objLocator.asyncFindLocator(objRepo.signUpPage.captcha);
+            return buttonActions.click(captchaImage);
+        } catch (e) {
+            browser.logger.error(e);
+        }
+    }
+
+    this.clickLogInLink = function() {
+        try {
+            var logInLink = objLocator.asyncFindLocator(objRepo.signUpPage.loginLink);
+            return buttonActions.click(logInLink);
+        } catch (e) {
+            browser.logger.error(e);
+        }
+
+    }
 };

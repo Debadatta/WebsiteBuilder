@@ -6,7 +6,7 @@ module.exports = function () {
             element.isDisplayed().then(function () {
                 element.isEnabled().then(function () {
                     element.click();
-                   // return this;
+                    return this;
                 });
             });
         }

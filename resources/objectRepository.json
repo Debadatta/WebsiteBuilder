@@ -13,12 +13,25 @@
       
     },
 
+    "loginPage": {
+      "header": ["xpath", "//h1[contains(text(), 'Log In')]"],
+      "email": ["name", "email"],
+      "password": ["name", "password"],
+      "loginButton":["name", "submit"]
+    },
     "signUpPage": {
       "header": ["xpath", "//h1[contains(text(), 'Sign Up')]"],
-      "email": ["model", "$ctrl.email"],
-      "emailConfirm": ["model", "$ctrl.emailConfirm"],
-      "password": ["model", "$ctrl.password"],
-      "confirmPassword": ["model","$ctrl.passwordConfirm"],
-      "submitButton":["css", "input[type='submit']"]
+      "email": ["name", "email"],
+      "emailConfirm": ["name", "emailConfirm"],
+      "password": ["name", "password"],
+      "confirmPassword": ["name","passwordConfirm"],
+      "submitButton":["name", "submit"],
+      "facebookSignUp": ["xpath", "//span[contains(text(), 'Continue with Facebook')]"],
+      "googleSignUp": ["xpath", "//span[contains(text(), 'Continue with Google')]"],
+      "captcha": ["xpath", "//div[@class='recaptcha-checkbox-border']"],
+      "loginLink":["xpath", "//a[contains(text(), 'Log In')]"]
+    },
+    "introPage": {
+      "getStartedMsg": ["xpath", "//span[contains(text(), 'Let’s get started')]"]
     }
   }

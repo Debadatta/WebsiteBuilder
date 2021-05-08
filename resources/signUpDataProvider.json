@@ -1,0 +1,7 @@
+{
+    "users": {
+        "user1": {"email": "deb@gmail.com", "emailConfirm": "deb@gmail.com", "password": "abcd1234", "confirmPassword": "abcd1234"}
+        
+        
+    }
+}

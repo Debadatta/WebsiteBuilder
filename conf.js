@@ -6,7 +6,7 @@ exports.config = {
     
     framework: 'jasmine',
     seleniumAddress: 'http://localhost:4444/wd/hub',
-    specs: ['global.js', 'specs/homePageSpec1.js', 'specs/signUpPageSpec.js'],
+    specs: ['global.js', 'specs/homePageSpec1.js', 'specs/signUpPageSpec.js', 'specs/loginPageSpec.js'],
     multiCapabilities: [
         {  'browserName': 'chrome' }
         //, {  'browserName': 'firefox' }
@@ -114,4 +114,6 @@ exports.config = {
             new htmlReporter().from('./reports/xml/xmlresults.xml', testConfig);
         });
     }
+
+    
   }
